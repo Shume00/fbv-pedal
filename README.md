@@ -2,6 +2,14 @@
 
 <h2>Arduino code for emulating a FBV pedal for amplifiers</h2>
 
+<h3>Big thanks to:</h3>
+<ul>
+  <li>https://github.com/kempline/open_fbv - <a href="https://github.com/kempline" target="_blank">@kempline</a></li>
+  <li>https://www.instructables.com/Line-6-Spider-Amp-Hack/</li>
+</ul>
+
+---
+
 <h3>Disclaimer:</h3>
 <h4>Make sure PIN0 is disconnected when flashing your Arduino with USB</h4>
 
