@@ -123,20 +123,26 @@ void loop() {
     }
   }
 
-  if (millis() - lastBtnPress > 200) {
+if (millis() - lastBtnPress > 200) {
     if (digitalRead(btnChannelUp) == LOW) {
-      currentChannel = (currentChannel + 1) % 4;
-      lastBtnPress = millis();
-      triggerChannelChange(currentChannel);
-      EEPROM.update(EEPROM_ADDR, currentChannel);
-      stateChanged = true;
+      delay(10);
+      if (digitalRead(btnChannelUp) == LOW) { 
+        currentChannel = (currentChannel + 1) % 4;
+        lastBtnPress = millis();
+        triggerChannelChange(currentChannel);
+        EEPROM.update(EEPROM_ADDR, currentChannel);
+        stateChanged = true;
+      }
     } 
     else if (digitalRead(btnChannelDown) == LOW) {
-      currentChannel = (currentChannel - 1 + 4) % 4;
-      lastBtnPress = millis();
-      triggerChannelChange(currentChannel);
-      EEPROM.update(EEPROM_ADDR, currentChannel);
-      stateChanged = true;
+      delay(10);
+      if (digitalRead(btnChannelDown) == LOW) {
+        currentChannel = (currentChannel - 1 + 4) % 4;
+        lastBtnPress = millis();
+        triggerChannelChange(currentChannel);
+        EEPROM.update(EEPROM_ADDR, currentChannel);
+        stateChanged = true;
+      }
     }
   }
 
